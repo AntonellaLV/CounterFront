@@ -1,0 +1,154 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgb(32, 3, 49), #a13ffd);
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+button {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  margin: 0.5rem 0;
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    border-color 0.3s ease;
+}
+
+/* Botón de incremento */
+button:first-of-type {
+  background-color: #2b8309;
+  color: white;
+  border-color: #ffffff;
+}
+
+button:first-of-type:hover {
+  background-color: #ff6347;
+}
+
+/* Botón de decremento */
+button:nth-of-type(2) {
+  background-color: #03306b;
+  color: white;
+  border-color: #ffffff;
+}
+
+button:nth-of-type(2):hover {
+  background-color: #3cb371;
+}
+
+/* Botón de reset */
+button:nth-of-type(3) {
+  background-color: #ff0303;
+  color: white;
+  border-color: #ffffff;
+}
+
+button:nth-of-type(3):hover {
+  background-color: #6495ed;
+}
+
+/* Botón de toggle theme */
+button:last-of-type {
+  background-color: #4d4641;
+  color: white;
+  border-color: #f7f7f7;
+}
+
+button:last-of-type:hover {
+  background-color: #cd853f;
+}
+
+/* Temas */
+.App.light {
+  background: linear-gradient(135deg, rgb(15, 13, 141), #8c52ad);
+  color: white;
+}
+
+.App.dark {
+  background: linear-gradient(135deg, #333, #999);
+  color: white;
+}
+
+/* Agrega una animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.App {
+  animation: fadeIn 2s ease-in;
+}
+
+/* Agrega una sombra al texto */
+h1 {
+  text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Animación para cambios en el contador */
+@keyframes counterChange {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.counter {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  animation: counterChange 0.3s ease-in-out;
+}
+
+/* Indicador de límite */
+.counter.high {
+  color: red;
+}
+
+.counter.low {
+  color: green;
+}
